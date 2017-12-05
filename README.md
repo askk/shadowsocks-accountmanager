@@ -90,13 +90,7 @@ The listening address in `--manager-address` of step 1 and in `shadowsocks -> ad
              | ssmgr plugins |
              |  with type m  |
              +---------------+
-```
-
-### Plugins
-[cli](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/cli/README.md)  
-[telegram](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/telegram/README.md)  
-[freeAccount](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/freeAccount/README.md)  
-[webgui](https://github.com/shadowsocks/shadowsocks-manager/blob/master/plugins/webgui/README.md)  
+``` 
 
 ### Parameter
 
