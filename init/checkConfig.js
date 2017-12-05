@@ -7,13 +7,12 @@ const log = appRequire('init/log');
 const log4js = require('log4js');
 const logger = log4js.getLogger('system');
 
-const ssmgrPath = path.resolve(os.homedir(), './.ssmgr/');
+const ssaccmgrPath = path.resolve(os.homedir(), './.ssaccmgr/');
 
 program
-  .version('shadowsocks-manager ' + version)
-  .option('-c, --config [file]', 'config file, default: ~/.ssmgr/default.yml')
-  .option('-d, --db [file]', 'sqlite3 file, sample: ~/.ssmgr/db.sqlite')
-  .option('-t, --type [type]', 'type, s for server side, m for manager side')
+  .version('shadowsocks-accountmanager ' + version)
+  .option('-c, --config [file]', 'config file, default: ~/.ssaccmgr/default.yml')
+  .option('-d, --db [file]', 'sqlite3 file, sample: ~/.ssaccmgr/db.sqlite')
   .option('-s, --shadowsocks [address]', 'ss-manager address, sample: 127.0.0.1:6001')
   .option('-m, --manager [address]', 'manager address, sample: 0.0.0.0:6002')
   .option('-p, --password [password]', 'manager password, both server side and manager side must be equals')
@@ -45,7 +44,7 @@ if (typeof config.get('db') === 'object') {
   if (dbpath[0] === '/' || dbpath[0] === '.' || dbpath[0] === '~') {
 	  config.set('db', path.resolve(dbpath));
   } else {
-	  config.set('db', path.resolve(ssmgrPath, dbpath));
+	  config.set('db', path.resolve(ssaccmgrPath, dbpath));
   }
 }
 log.setFileAppenders(logName);

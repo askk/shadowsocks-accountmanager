@@ -9,13 +9,13 @@ const logger = log4js.getLogger('system');
 
 let config;
 
-const defaultPath = path.resolve(os.homedir() + '/.ssmgr/default.yml');
+const defaultPath = path.resolve(os.homedir() + '/.ssaccmgr/default.yml');
 let configFilePath = defaultPath;
 if(global.configFile) {
   if(fs.existsSync(path.resolve(global.configFile))) {
     configFilePath = path.resolve(global.configFile);
-  } else if(fs.existsSync(path.resolve(os.homedir() + '/.ssmgr/' + global.configFile))) {
-    configFilePath = path.resolve(os.homedir() + '/.ssmgr/' + global.configFile);
+  } else if(fs.existsSync(path.resolve(os.homedir() + '/.ssaccmgr/' + global.configFile))) {
+    configFilePath = path.resolve(os.homedir() + '/.ssaccmgr/' + global.configFile);
   } else {
     logger.error(`Can not find file: ${ global.configFile }`);
     process.exit(1);

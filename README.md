@@ -6,9 +6,9 @@
 [download-url]: https://npmjs.org/package/shadowsocks-manager
 [license-image]: https://img.shields.io/npm/l/shadowsocks-manager.svg
 
-# shadowsocks-manager
+# shadowsocks-accountmanager
 
-A shadowsocks manager tool for multi user and traffic control.  
+A shadowsocks account manager tool for multi user and traffic control.  
 Base on Node.js and SQLite.
 
 For more details, you can see [the wiki page](https://github.com/shadowsocks/shadowsocks-manager/wiki).
@@ -33,31 +33,6 @@ use `node server.js` to run this program.
 npm i -g shadowsocks-manager
 ```
 use `ssmgr` to run this program.
-
-### From docker:
-```
-docker run --name ssmgr -idt -v ~/.ssmgr:/root/.ssmgr --net=host gyteng/ssmgr [ssmgr params...]
-```
-
-### Build docker image:
-
-here is the `Dockerfile`
-
-```
-FROM ubuntu:16.04
-MAINTAINER gyteng <igyteng@gmail.com>
-RUN apt-get update && \
-    apt-get install tzdata net-tools curl git sudo software-properties-common python-pip -y && \
-    pip install git+https://github.com/shadowsocks/shadowsocks.git@master && \
-    add-apt-repository ppa:max-c-lv/shadowsocks-libev -y && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-    apt-get install -y nodejs shadowsocks-libev && \
-    npm i -g shadowsocks-manager && \
-    echo "Asia/Shanghai" > /etc/timezone && \
-    rm /etc/localtime && \
-    dpkg-reconfigure -f noninteractive tzdata
-ENTRYPOINT ["/usr/bin/ssmgr"]
-```
 
 ### Usage
 1. Start shadowsocks with [manager API](https://github.com/shadowsocks/shadowsocks/wiki/Manage-Multiple-Users), it supports `shadowsocks-python` and `shadowsocks-libev`.
@@ -125,18 +100,17 @@ The listening address in `--manager-address` of step 1 and in `shadowsocks -> ad
 
 ### Parameter
 
-`ssmgr --help` will show startup parameters info.
+`ssaccmgr --help` will show startup parameters info.
 
 ```
-Usage: ssmgr [options]
+Usage: ssaccmgr [options]
 
   Options:
 
     -h, --help                   output usage information
     -V, --version                output the version number
-    -c, --config [file]          config file, default: ~/.ssmgr/default.yml
-    -d, --db [file]              sqlite3 file, sample: ~/.ssmgr/db.sqlite
-    -t, --type [type]            type, s for server side, m for manager side
+    -c, --config [file]          config file, default: ~/.ssaccmgr/default.yml
+    -d, --db [file]              sqlite3 file, sample: ~/.ssaccmgr/db.sqlite
     -s, --shadowsocks [address]  ss-manager address, sample: 127.0.0.1:6001
     -m, --manager [address]      manager address, sample: 0.0.0.0:6002
     -p, --password [password]    manager password, both server side and manager side must be equals
@@ -144,4 +118,4 @@ Usage: ssmgr [options]
     --debug                      show debug message
 ```
 
-First, ssmgr will read the config file in `--config`, and other parameters(`-detsmp`) will replace the config file values.
+First, ssaccmgr will read the config file in `--config`, and other parameters(`-detsmp`) will replace the config file values.

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const ssmgrPath = path.resolve(os.homedir() + '/.ssmgr');
-const logPath = path.resolve(os.homedir() + '/.ssmgr/logs');
+const ssaccmgrPath = path.resolve(os.homedir() + '/.ssaccmgr');
+const logPath = path.resolve(os.homedir() + '/.ssaccmgr/logs');
 const log4js = require('log4js');
 
 const category = [
@@ -40,9 +40,9 @@ const setConsoleLevel = level => {
 
 const setFileAppenders = (filename) => {
   try {
-    fs.statSync(ssmgrPath);
+    fs.statSync(ssaccmgrPath);
   } catch(err) {
-    fs.mkdirSync(ssmgrPath);
+    fs.mkdirSync(ssaccmgrPath);
   }
   try {
     fs.statSync(logPath);
