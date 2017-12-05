@@ -13,12 +13,6 @@ Base on Node.js and SQLite.
 
 For more details, you can see [the wiki page](https://github.com/shadowsocks/shadowsocks-manager/wiki).
 
-If you want to use the old version, please switch to [this branch](https://github.com/shadowsocks/shadowsocks-manager/tree/version1).
-
-## WebGUI Demo:
-
-[https://wall.gyteng.com](https://wall.gyteng.com)
-
 ## Dependencies
 
 Node.js 6.*
@@ -151,33 +145,3 @@ Usage: ssmgr [options]
 ```
 
 First, ssmgr will read the config file in `--config`, and other parameters(`-detsmp`) will replace the config file values.
-
-### Translate
-
-If your want to help to translate it to other languages, please edit files [here](https://github.com/shadowsocks/shadowsocks-manager/tree/dev/plugins/webgui/public/translate) and give me a pull request.
-
-### Telegram
-Join the group if you have some problem: [https://t.me/ssmgr](https://t.me/ssmgr)
-
-### VPS recommendation
-
-* [Linode](https://www.linode.com/?r=bbc24323b3adaf3d74f242fd958d91b55cc6fdea)
-
-* [DigitalOcean](https://m.do.co/c/d43891b79a52)
-
-* [Vultr](http://www.vultr.com/?ref=6926595)
-
-* [AlibabaCloud](https://account-intl.aliyun.com/register/intl_register.htm?biz_params=%7B%22intl%22%3A%22%7B%5C%22referralCode%5C%22%3A%5C%22koa26v%5C%22%7D%22%7D)
-
-* [BandwagonHost](https://bandwagonhost.com/aff.php?aff=19999)
-
-* [dediserve](https://manage.dediserve.com/?affid=841)
-
-### Donate
-If you find this project helpful, please consider making a donation:  
-
-* Alipay  
-<img src="https://github.com/gyteng/gyteng.github.com/raw/master/media/pic/alipay.jpg" width="160">
-
-* WeChat Pay  
-<img src="https://github.com/gyteng/gyteng.github.com/raw/master/media/pic/wechat.png" width="160">
